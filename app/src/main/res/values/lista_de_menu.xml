@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="menu">
+        <item>Entrenadores</item>
+        <item>Participantes</item>
+        <item>Votar</item>
+        <item>Idioma</item>
+        <item>Agregar participante</item>
+
+    </string-array>
+</resources>

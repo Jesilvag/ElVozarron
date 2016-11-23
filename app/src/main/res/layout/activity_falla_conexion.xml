@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@android:color/background_light">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorSecondary"
+        android:gravity="center"
+        android:layout_marginTop="0dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/falla"
+                android:id="@+id/textView" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dinosaurio" />
+            <Button
+                android:id="@+id/id_conectar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Conectar"
+
+                />
+
+            <Button
+                android:id="@+id/id_cancelar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
