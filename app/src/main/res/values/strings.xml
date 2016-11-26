@@ -31,4 +31,9 @@
     <string name="espacio_entrenador">Espacio entrenador</string>
     <string name="video">Video</string>
     <string name="estado">Estado</string>
+    <string name="genero">Genero</string>
+    <string name="historial">Historial</string>
+    <string name="btn_participantes">Participantes</string>
+    <string name="btn_conectar">Conectar</string>
+    <string name="btn_cancelar">Cancelar</string>
 </resources>
