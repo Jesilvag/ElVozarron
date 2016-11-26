@@ -36,5 +36,7 @@
     <string name="btn_participantes">Constestants</string>
     <string name="btn_conectar">Connect</string>
     <string name="btn_cancelar">Cancel</string>
+    <string name="btn_ingles">English</string>
+    <string name="btn_espaniol">Spanish</string>
 
 </resources>
