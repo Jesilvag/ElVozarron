@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">El Vozarron</string>
+    <string name="app_name">The Vozarron</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="name_entrenadores">Entrenadores</string>
-    <string name="name_vozarron">El vozarrón</string>
+    <string name="name_entrenadores">Trainer</string>
+    <string name="name_vozarron">The vozarrón</string>
     <string name="title_activity_entrenador">EntrenadorActivity</string>
     <string name="texto_historial">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
@@ -19,16 +19,17 @@
 
     </string-array>
 
-    <string name="info_popup"> Atención las votaciones se encuentran inhabilitadas</string>
-    <string name="falla">Falla en la conexion a internet</string>
+    <string name="info_popup">" Vote Disabled"</string>
+    <string name="falla">Conection Failed</string>
     <string name="facebook_app_id">885888268215233</string>
-    <string name="id_cerrar">Cerrar</string>
-    <string name="id_compartir">Compartir</string>
-    <string name="nombre">Nombre Participante</string>
-    <string name="edad">Edad</string>
-    <string name="espacio_edad">Espacio edad</string>
-    <string name="entrenador">Entrenador</string>
-    <string name="espacio_entrenador">Espacio entrenador</string>
+    <string name="id_cerrar">Close</string>
+    <string name="id_compartir">Share</string>
+    <string name="nombre">Constestant name</string>
+    <string name="edad">Age</string>
+    <string name="espacio_edad">Age</string>
+    <string name="entrenador">Trainer</string>
+    <string name="espacio_entrenador">Trainer</string>
     <string name="video">Video</string>
-    <string name="estado">Estado</string>
+    <string name="estado">State</string>
+
 </resources>
