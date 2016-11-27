@@ -12,6 +12,7 @@ public class Participante {
      * Atributos de un participante
      */
 
+    private String _id;
     private String idParticipante;
     private String nombreParticipante;
     private String entrenador;
@@ -109,5 +110,13 @@ public class Participante {
 
     public void setAvatar(int avatar) {
         this.avatar = avatar;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 }

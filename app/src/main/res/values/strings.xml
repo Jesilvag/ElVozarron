@@ -11,13 +11,7 @@
         Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris nisi ut aliquid ex ea commodi consequat.</string>
 
-    <string-array name="ocupaciones">
-        <item>Estudiante</item>
-        <item>Docente</item>
-        <item>Administrativo</item>
-        <item>Otro</item>
 
-    </string-array>
 
     <string-array name="welcome">
         <item>Entrenadores</item>
@@ -30,6 +24,15 @@
     <string name="info_popup"> Atención las votaciones se encuentran inhabilitadas</string>
     <string name="falla">Falla en la conexion a internet</string>
     <string name="facebook_app_id">885888268215233</string>
+
+    <string name="cargando_participantes">Cargando participantes</string>
+    <string name="esperar">Esperar</string>
+    <string name="boton_agregarFoto">Agregar foto</string>
+    <string name="nombre_participante">Nombre</string>
+    <string name="edad_participante">Edad</string>
+
+
+
     <string name="id_cerrar">Cerrar</string>
     <string name="id_compartir">Compartir</string>
     <string name="nombre">Nombre Participante</string>

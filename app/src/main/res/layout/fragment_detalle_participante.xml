@@ -90,16 +90,18 @@
             android:layout_marginLeft="10dp"
             />
 
-
-        <Spinner
-            android:id="@+id/spinner_ocupacion_participante"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/espacio_ocupacion"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@+id/titulo_ocupacion"
-            android:entries="@array/ocupaciones"
             android:layout_marginTop="70dp"
-            android:layout_marginLeft="120dp"/>
+            android:text="ocupacion"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16dp"
+            android:layout_marginLeft="120dp"
+            />
+
+
 
         <TextView
             android:id="@+id/titulo_url_video"

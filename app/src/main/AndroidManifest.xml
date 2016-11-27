@@ -25,6 +25,7 @@
         <activity android:name=".activity.DetalleParticipanteActivity" />
         <activity android:name=".activity.ParticipantesActivity" />
         <activity android:name=".activity.PopupVotacionActivity"></activity>
+        <activity android:name=".activity.AgregarParticipanteActivity"></activity>
 
         <meta-data android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"/><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
