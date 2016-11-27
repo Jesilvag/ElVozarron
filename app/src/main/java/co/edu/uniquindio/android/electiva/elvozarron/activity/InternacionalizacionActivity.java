@@ -40,7 +40,7 @@ public class InternacionalizacionActivity extends AppCompatActivity implements V
         Configuration conf = res.getConfiguration();
         conf.locale = myLocale;
         res.updateConfiguration(conf, dm);
-        Intent refresh = new Intent(this, InternacionalizacionActivity.class);
+        Intent refresh = new Intent(this, WelcomeActivity.class);
         startActivity(refresh);
         finish();
     }
