@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="profesores">
+        <item>Elija su entrenador</item>
         <item>Adele</item>
         <item>Jhony Rivera</item>
         <item>Rihana</item>
     </string-array>
 
     <string-array name="ocupaciones">
+        <item>Elija relación con la U</item>
         <item>Estudiante</item>
         <item>Docente</item>
         <item>Administrativo</item>

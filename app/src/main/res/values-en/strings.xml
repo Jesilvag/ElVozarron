@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">The Vozarron</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_entrenadores">Trainer</string>
+    <string name="name_vozarron">The vozarrón</string>
+    <string name="title_activity_entrenador">EntrenadorActivity</string>
+    <string name="texto_historial">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquid ex ea commodi consequat.</string>
+
+    <string-array name="ocupaciones">
+        <item>Estudiante</item>
+        <item>Docente</item>
+        <item>Administrativo</item>
+        <item>Otro</item>
+
+    </string-array>
+
+    <string-array name="welcome">
+        <item>Trainers</item>
+        <item>Constesttans</item>
+        <item>Vote</item>
+        <item>Language</item>
+        <item>Add contestants</item>
+    </string-array>
+
+    <string name="info_popup">" Vote Disabled"</string>
+    <string name="falla">Conection Failed</string>
+    <string name="facebook_app_id">885888268215233</string>
+    <string name="id_cerrar">Close</string>
+    <string name="id_compartir">Share</string>
+    <string name="nombre">Constestant name</string>
+    <string name="edad">Age</string>
+    <string name="espacio_edad">Age</string>
+    <string name="entrenador">Trainer</string>
+    <string name="espacio_entrenador">Trainer</string>
+    <string name="video">Video</string>
+    <string name="estado">State</string>
+    <string name="genero">Gender</string>
+    <string name="historial">Record</string>
+    <string name="btn_participantes">Constestants</string>
+    <string name="btn_conectar">Connect</string>
+    <string name="btn_cancelar">Cancel</string>
+    <string name="btn_ingles">English</string>
+    <string name="btn_espaniol">Spanish</string>
+
+</resources>

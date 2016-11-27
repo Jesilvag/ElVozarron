@@ -13,9 +13,18 @@
 
 
 
+    <string-array name="welcome">
+        <item>Entrenadores</item>
+        <item>Participantes</item>
+        <item>Votar</item>
+        <item>Idioma</item>
+        <item>Agregar Participante</item>
+    </string-array>
+
     <string name="info_popup"> Atención las votaciones se encuentran inhabilitadas</string>
     <string name="falla">Falla en la conexion a internet</string>
     <string name="facebook_app_id">885888268215233</string>
+<<<<<<< HEAD
     <string name="cargando_participantes">Cargando participantes</string>
     <string name="esperar">Esperar</string>
     <string name="boton_agregarFoto">Agregar foto</string>
@@ -23,4 +32,22 @@
     <string name="edad_participante">Edad</string>
 
 
+=======
+    <string name="id_cerrar">Cerrar</string>
+    <string name="id_compartir">Compartir</string>
+    <string name="nombre">Nombre Participante</string>
+    <string name="edad">Edad</string>
+    <string name="espacio_edad">Espacio edad</string>
+    <string name="entrenador">Entrenador</string>
+    <string name="espacio_entrenador">Espacio entrenador</string>
+    <string name="video">Video</string>
+    <string name="estado">Estado</string>
+    <string name="genero">Genero</string>
+    <string name="historial">Historial</string>
+    <string name="btn_participantes">Participantes</string>
+    <string name="btn_conectar">Conectar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_ingles">Ingles</string>
+    <string name="btn_espaniol">Español</string>
+>>>>>>> e7be9f2b32bcb68a832b296ab452893a96367dbc
 </resources>
