@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import co.edu.uniquindio.android.electiva.elvozarron.R;
+import co.edu.uniquindio.android.electiva.elvozarron.activity.AgregarParticipanteActivity;
 import co.edu.uniquindio.android.electiva.elvozarron.activity.EntrenadoresActivity;
 import co.edu.uniquindio.android.electiva.elvozarron.activity.InternacionalizacionActivity;
 import co.edu.uniquindio.android.electiva.elvozarron.activity.ParticipantesActivity;
@@ -66,7 +67,8 @@ public class ItemMenuAdapter extends RecyclerView.Adapter<ItemMenuAdapter.ItemMe
                         v.getContext().startActivity(intent);
                     }
                     if (itemMenu.getNombre().equals("Agregar participante")){
-                        Toast.makeText(v.getContext(), "agregar participante", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(v.getContext(), AgregarParticipanteActivity.class);
+                        v.getContext().startActivity(intent);
                     }
                 }
             });

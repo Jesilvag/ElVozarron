@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context="co.edu.uniquindio.android.electiva.elvozarron.activity.AgregarParticipanteActivity"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/boton_agregarFoto"
+        android:id="@+id/boton_agregarFoto"
+        android:layout_weight="1" />
+
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginLeft="180dp"
+
+        android:id="@+id/imageView"
+        android:src="@drawable/adele"
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Ingrese su nombre"
+        android:ems="8"
+        android:id="@+id/nombre"
+        android:textSize="16dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Ingrese su edad"
+        android:ems="8"
+        android:id="@+id/edad"
+        android:textSize="16dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        android:id="@+id/spinner_entrenadores"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="16dp"
+        android:id="@+id/spinner_ocupacion"
+        android:layout_weight="1" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Url de su video"
+        android:ems="8"
+        android:id="@+id/ingresar_url_video"
+        android:textSize="16dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:background="@drawable/oval"
+        android:elevation="10dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="340dp"
+
+        android:src="@drawable/plus"
+        />
+
+
+</RelativeLayout>
+

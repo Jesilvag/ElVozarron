@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="profesores">
+        <item>Adele</item>
+        <item>Jhony Rivera</item>
+        <item>Rihana</item>
+    </string-array>
+
+    <string-array name="ocupaciones">
+        <item>Estudiante</item>
+        <item>Docente</item>
+        <item>Administrativo</item>
+        <item>Oficios varios</item>
+
+    </string-array>
+
+</resources>

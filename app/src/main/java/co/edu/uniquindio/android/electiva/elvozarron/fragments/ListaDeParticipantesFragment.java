@@ -1,8 +1,10 @@
 package co.edu.uniquindio.android.electiva.elvozarron.fragments;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,7 +19,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.android.electiva.elvozarron.R;
+import co.edu.uniquindio.android.electiva.elvozarron.util.ConexionServicioWeb;
 import co.edu.uniquindio.android.electiva.elvozarron.util.ParticipanteAdapter;
+import co.edu.uniquindio.android.electiva.elvozarron.util.Utilidades;
 import co.edu.uniquindio.android.electiva.elvozarron.vo.Participante;
 
 /**
@@ -43,10 +47,14 @@ public class ListaDeParticipantesFragment extends Fragment implements Participan
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        listadoParticipantes = (RecyclerView) getView().findViewById(R.id.listaParticipantes);
+      /*  listadoParticipantes = (RecyclerView) getView().findViewById(R.id.listaParticipantes);
         adaptador = new ParticipanteAdapter(participantes, this);
         listadoParticipantes.setAdapter(adaptador);
-        listadoParticipantes.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        listadoParticipantes.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));*/
+
+        HiloSecundario hiloSecundario = new HiloSecundario(this.getContext());
+        hiloSecundario.execute(Utilidades.LISTAR);
+
     }
 
     @Override
@@ -124,6 +132,57 @@ public class ListaDeParticipantesFragment extends Fragment implements Participan
 
     public interface OnParticipanteSeleccionadoListener {
         void onParticipanteSeleccionado(int position);
+    }
+
+    /**
+     * hilo
+     */
+    public class HiloSecundario extends AsyncTask<Integer, Integer, Integer> {
+
+        private ProgressDialog progress;
+        private Context context;
+        private Participante participante;
+
+
+        public HiloSecundario(Context context) {
+            this.context = context;
+            participante = null;
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progress = ProgressDialog.show(context, context.getString(R.string.cargando_participantes),
+                    context.getString(R.string.esperar), true);
+        }
+
+        @Override
+        protected Integer doInBackground(Integer... params) {
+
+            if (params[0] == Utilidades.LISTAR)
+                setParticipantes(ConexionServicioWeb.getListaDeParticipante());
+
+            return params[0];
+        }
+
+        @Override
+        protected void onPostExecute(Integer integer) {
+            super.onPostExecute(integer);
+            progress.dismiss();
+
+            if(integer == Utilidades.LISTAR){
+
+                if(adaptador==null)
+                    adaptador = new ParticipanteAdapter(participantes, ListaDeParticipantesFragment.this);
+
+                listadoParticipantes.setAdapter(adaptador);
+                listadoParticipantes.setLayoutManager(new
+                        LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+            }
+
+        }
+
     }
 
 

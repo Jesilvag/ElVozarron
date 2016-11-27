@@ -32,7 +32,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //arraylist del menu principal
         menus = new ArrayList();
-        menus.add(new ItemMenu("Entrenadores",R.drawable.entrenadores,"1"));
+        menus.add(new ItemMenu("Entrenadores", R.drawable.entrenadores,"1"));
         menus.add(new ItemMenu("Participantes",R.drawable.participantes,"2"));
         menus.add(new ItemMenu("Votar",R.drawable.votar,"3"));
         menus.add(new ItemMenu("Idioma",R.drawable.idioma,"4"));
