@@ -36,13 +36,13 @@
                 android:id="@+id/id_cerrar"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Cerrar" />
+                android:text="@string/id_cerrar" />
 
             <Button
                 android:id="@+id/id_compartir"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Compartir"
+                android:text="@string/id_compartir"
                 android:onClick="irAFacebook"/>
 
 
