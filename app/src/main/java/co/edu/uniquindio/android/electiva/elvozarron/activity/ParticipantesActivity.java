@@ -32,6 +32,11 @@ public class ParticipantesActivity extends AppCompatActivity implements ListaDeP
 
         ListaDeParticipantesFragment listaDeParticipantesFragment = (ListaDeParticipantesFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_participantes);
         listaDeParticipantesFragment.setParticipantes(participantes);
+        try { Thread.sleep(1000000);
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
 
     }
 

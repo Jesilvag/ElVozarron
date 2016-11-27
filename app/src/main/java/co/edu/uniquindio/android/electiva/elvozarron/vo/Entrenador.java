@@ -2,12 +2,13 @@ package co.edu.uniquindio.android.electiva.elvozarron.vo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.provider.BaseColumns;
 
 /**
  * Clase que contiene los atributos de un entrenador
  * Created by MONICA on 30/10/2016.
  */
-public class Entrenador implements Parcelable {
+public class Entrenador implements Parcelable,BaseColumns{
 
     //atributos
     private String id;
