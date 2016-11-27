@@ -19,6 +19,14 @@
 
     </string-array>
 
+    <string-array name="welcome">
+        <item>Entrenadores</item>
+        <item>Participantes</item>
+        <item>Votar</item>
+        <item>Idioma</item>
+        <item>Agregar Participante</item>
+    </string-array>
+
     <string name="info_popup"> Atención las votaciones se encuentran inhabilitadas</string>
     <string name="falla">Falla en la conexion a internet</string>
     <string name="facebook_app_id">885888268215233</string>

@@ -19,6 +19,14 @@
 
     </string-array>
 
+    <!--<string-array name="welcome">
+        <item>Trainers</item>
+        <item>Constesttans</item>
+        <item>Vote</item>
+        <item>Language</item>
+        <item>Add contestants</item>
+    </string-array>-->
+
     <string name="info_popup">" Vote Disabled"</string>
     <string name="falla">Conection Failed</string>
     <string name="facebook_app_id">885888268215233</string>
