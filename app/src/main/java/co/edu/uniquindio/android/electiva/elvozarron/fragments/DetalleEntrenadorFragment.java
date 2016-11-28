@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import co.edu.uniquindio.android.electiva.elvozarron.R;
+import co.edu.uniquindio.android.electiva.elvozarron.activity.EntrenadorActivity;
+import co.edu.uniquindio.android.electiva.elvozarron.util.ConexionSQLite;
 import co.edu.uniquindio.android.electiva.elvozarron.vo.Entrenador;
 
 /**
@@ -19,11 +21,23 @@ public class DetalleEntrenadorFragment extends Fragment implements View.OnClickL
 
     private TextView txtNombreEntrenador;
     private TextView txtNombreGenero;
+    private TextView txtHistorial;
+
+    public Entrenador getEntrenador() {
+        return entrenador;
+    }
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
+    }
+
     private Entrenador entrenador;
+    private ConexionSQLite datos;
 
     //Método constructor
     public DetalleEntrenadorFragment() {
         // Required empty public constructor
+
     }
 
 
@@ -49,9 +63,10 @@ public class DetalleEntrenadorFragment extends Fragment implements View.OnClickL
         this.entrenador = entrenador;
         txtNombreEntrenador = (TextView) getView().findViewById(R.id.nombre_entrenador);
         txtNombreEntrenador.setText(entrenador.getNombre());
-
         txtNombreGenero = (TextView) getView().findViewById(R.id.nombre_genero);
         txtNombreGenero.setText(entrenador.getGenero());
+        txtHistorial= (TextView) getView().findViewById(R.id.historial_entrenador);
+        txtHistorial.setText(entrenador.getHistorial());
 
     }
 
@@ -62,5 +77,6 @@ public class DetalleEntrenadorFragment extends Fragment implements View.OnClickL
     @Override public void onClick(View v) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(entrenador.getUrl()));
         startActivity(intent);
+
     }
 }

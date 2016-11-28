@@ -1,6 +1,11 @@
 package co.edu.uniquindio.android.electiva.elvozarron.util;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,12 +13,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.android.electiva.elvozarron.R;
 import co.edu.uniquindio.android.electiva.elvozarron.activity.EntrenadorActivity;
 import co.edu.uniquindio.android.electiva.elvozarron.fragments.ListaDeEntrenadoresFragment;
 import co.edu.uniquindio.android.electiva.elvozarron.vo.Entrenador;
+
+import static co.edu.uniquindio.android.electiva.elvozarron.R.id.image;
+import static co.edu.uniquindio.android.electiva.elvozarron.R.id.imagen;
 
 /**
  * Clase Adapter que maneja el recycler view para manejar listas
@@ -23,7 +36,7 @@ public class EntrenadorAdapter extends RecyclerView.Adapter<EntrenadorAdapter.En
 
     private ArrayList<Entrenador> entrenadores;
     private static OnClickAdaptadorDeEntrenador listener;
-
+    private static Bitmap bitMapImage;
 
     /**
      * Metodo constructor de la clase AdaptadorEntrenador, recibe un arraylist y un fragmento
@@ -60,10 +73,18 @@ public class EntrenadorAdapter extends RecyclerView.Adapter<EntrenadorAdapter.En
         Entrenador entrenador = entrenadores.get(i);
         viewHolder.txtNombreEntrenador.setText(entrenadores.get(i).getNombre());
         viewHolder.txtGenero.setText(entrenadores.get(i).getGenero());
-        viewHolder.imagen.setImageResource(entrenadores.get(i).getImagen());
+        viewHolder.imagen.setImageBitmap(convertByteArrayToBitmap(entrenadores.get(i).getImagen()));
         viewHolder.entre = entrenador;
     }
 
+
+
+    public  Bitmap convertByteArrayToBitmap(byte[] byteArrayToBeCOnvertedIntoBitMap)
+    {
+        Bitmap bitMapImage = BitmapFactory.decodeByteArray(byteArrayToBeCOnvertedIntoBitMap, 0,
+                byteArrayToBeCOnvertedIntoBitMap.length);
+        return bitMapImage;
+    }
     /**
      * retorna el tamaño del arraylis de entrenadores
      * @return
@@ -86,6 +107,10 @@ public class EntrenadorAdapter extends RecyclerView.Adapter<EntrenadorAdapter.En
         public Entrenador entre;
 
 
+        /**
+         *
+         * @param itemView
+         */
         public EntrenadoreViewHolder(View itemView) {
             super(itemView);
             txtNombreEntrenador = (TextView)itemView.findViewById(R.id.nombre_entrenador);
@@ -96,17 +121,18 @@ public class EntrenadorAdapter extends RecyclerView.Adapter<EntrenadorAdapter.En
                 @Override
                 public void onClick(View v) {
 
-                    if(entre.getNombre().equals("rihana")){
+                    if(entre.getId()==1){
+
                         Intent intent = new Intent(v.getContext(), EntrenadorActivity.class);
                         v.getContext().startActivity(intent);
 
                     }
-                    if(entre.getNombre().equals("adele")){
+                    if(entre.getId()==1){
                         Intent intent = new Intent(v.getContext(), EntrenadorActivity.class);
                         v.getContext().startActivity(intent);
 
                     }
-                    if(entre.getNombre().equals("jhony rivera")){
+                    if(entre.getId()==1){
                         Intent intent = new Intent(v.getContext(), EntrenadorActivity.class);
                         v.getContext().startActivity(intent);
 

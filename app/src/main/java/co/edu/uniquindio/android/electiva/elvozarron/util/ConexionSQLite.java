@@ -3,9 +3,15 @@ package co.edu.uniquindio.android.electiva.elvozarron.util;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 
+import java.lang.reflect.Field;
+import java.sql.Blob;
 import java.util.ArrayList;
 
+import co.edu.uniquindio.android.electiva.elvozarron.R;
+import co.edu.uniquindio.android.electiva.elvozarron.vo.Entrenador;
 import co.edu.uniquindio.android.electiva.elvozarron.vo.Participante;
 
 /**
@@ -15,8 +21,8 @@ public class ConexionSQLite {
 
 
     public static final String NOMBRE_BD = "vozarron";
-    public static final String TABLA_PARTICIPANTES = "Participantes";
-    public static final String CAMPOS_TABLA_PARTICIPANTES[]= new String[]{"_ID","NOMBRE_PARTICIPANTE","FK_ENTRENADOR","OCUPACION","EDAD","URL_VIDEO","AVATAR"};
+    public static final String TABLA_ENTRENADORES = "Entrenadores";
+    public static final String CAMPOS_TABLA_ENTRENADORES[]= new String[]{"_ID","NOMBRE_ENTRENADOR","GENERO","HISTORIAL","AVATAR"};
 
     private VozarronSQLiteHelper usdbh;
     private SQLiteDatabase db;
@@ -27,35 +33,54 @@ public class ConexionSQLite {
     }
 
     public static String crearTablaParticipante(){
-        String crearTabla = "CREATE TABLE %s ( %s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s TEX)";
-        return String.format(crearTabla, TABLA_PARTICIPANTES, CAMPOS_TABLA_PARTICIPANTES[0], CAMPOS_TABLA_PARTICIPANTES[1], CAMPOS_TABLA_PARTICIPANTES[2],
-                CAMPOS_TABLA_PARTICIPANTES[3], CAMPOS_TABLA_PARTICIPANTES[4],CAMPOS_TABLA_PARTICIPANTES[5],CAMPOS_TABLA_PARTICIPANTES[6]);
+        String crearTabla = "CREATE TABLE %s ( %s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT, %s TEXT, %s BLOB)";
+        return String.format(crearTabla, TABLA_ENTRENADORES, CAMPOS_TABLA_ENTRENADORES[0], CAMPOS_TABLA_ENTRENADORES[1], CAMPOS_TABLA_ENTRENADORES[2],
+                CAMPOS_TABLA_ENTRENADORES[3], CAMPOS_TABLA_ENTRENADORES[4]);
     }
 
 
-    public ArrayList<Participante> getInformacionBD(){
+    public ArrayList<Entrenador> getInformacionBD(){
 
-        ArrayList<Participante> participantes = new ArrayList<>();
-
-        Cursor c = db.query(TABLA_PARTICIPANTES,CAMPOS_TABLA_PARTICIPANTES,null,null,null,null,null);
+        ArrayList<Entrenador> entrenadores = new ArrayList<>();
+        Cursor c = db.query(TABLA_ENTRENADORES, CAMPOS_TABLA_ENTRENADORES,null,null,null,null,null);
 
         if (c.moveToFirst()) {
             do {
-                String _id = c.getString(0);
-                String nombreParticipante = c.getString(1);
-                String entrenador = c.getString(2);
-                String ocupacion = c.getString(3);
-                String edad = c.getString(4);
-                String urlVideo = c.getString(5);
-                String avatar = c.getString(6);
+           int _id = c.getInt(0);
+                String nombreEntrenador = c.getString(1);
+                String genero = c.getString(2);
+                String historial = c.getString(3);
+                byte[] avatar = c.getBlob(4);
 
-                participantes.add(new Participante(_id, nombreParticipante, entrenador, ocupacion,edad,urlVideo,avatar));
+
+                entrenadores.add(new Entrenador(_id,historial,nombreEntrenador,genero,avatar));
 
             } while (c.moveToNext());
         }
 
-        return participantes;
+        return entrenadores;
 
+    }
+    public Entrenador getEntrenador(int id){
+        String arg="_ID";
+        String[]campo=new String[] {String.valueOf(id)};
+        Cursor c=db.query(TABLA_ENTRENADORES,CAMPOS_TABLA_ENTRENADORES,arg,campo,null,null,null);
+        Entrenador entrenador=null;
+        if (c.moveToFirst()) {
+            do {
+                int _id = c.getInt(0);
+                String nombreEntrenador = c.getString(1);
+                String genero = c.getString(2);
+                String historial = c.getString(3);
+                byte[] avatar = c.getBlob(4);
+
+            entrenador=new Entrenador(_id,historial,nombreEntrenador,genero,avatar);
+
+
+
+            } while (c.moveToNext());
+        }
+        return  entrenador;
     }
 
 }

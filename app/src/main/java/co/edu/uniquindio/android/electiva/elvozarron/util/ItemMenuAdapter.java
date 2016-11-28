@@ -66,14 +66,11 @@ public class ItemMenuAdapter extends RecyclerView.Adapter<ItemMenuAdapter.ItemMe
                         Intent intent = new Intent(v.getContext(), InternacionalizacionActivity.class);
                         v.getContext().startActivity(intent);
                     }
-<<<<<<< HEAD
-                    if (itemMenu.getNombre().equals("Agregar participante")){
-                        Intent intent = new Intent(v.getContext(), AgregarParticipanteActivity.class);
-                        v.getContext().startActivity(intent);
-=======
+
+
                     if (itemMenu.getId().equals("5")){
                         Toast.makeText(v.getContext(), "agregar participante", Toast.LENGTH_SHORT).show();
->>>>>>> e7be9f2b32bcb68a832b296ab452893a96367dbc
+
                     }
                 }
             });

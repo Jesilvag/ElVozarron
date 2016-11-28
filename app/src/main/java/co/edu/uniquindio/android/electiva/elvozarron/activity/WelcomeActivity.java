@@ -34,19 +34,13 @@ public class WelcomeActivity extends AppCompatActivity {
         nombres=getResources().getStringArray(R.array.welcome);
         //arraylist del menu principal
         menus = new ArrayList();
-<<<<<<< HEAD
-        menus.add(new ItemMenu("Entrenadores", R.drawable.entrenadores,"1"));
-        menus.add(new ItemMenu("Participantes",R.drawable.participantes,"2"));
-        menus.add(new ItemMenu("Votar",R.drawable.votar,"3"));
-        menus.add(new ItemMenu("Idioma",R.drawable.idioma,"4"));
-        menus.add(new ItemMenu("Agregar participante",R.drawable.agregar,"5"));
-=======
+
+
         menus.add(new ItemMenu(nombres[0],R.drawable.entrenadores,"1"));
         menus.add(new ItemMenu(nombres[1],R.drawable.participantes,"2"));
         menus.add(new ItemMenu(nombres[2],R.drawable.votar,"3"));
         menus.add(new ItemMenu(nombres[3],R.drawable.idioma,"4"));
         menus.add(new ItemMenu(nombres[4],R.drawable.agregar,"5"));
->>>>>>> e7be9f2b32bcb68a832b296ab452893a96367dbc
 
 
         //obtener el recycle view

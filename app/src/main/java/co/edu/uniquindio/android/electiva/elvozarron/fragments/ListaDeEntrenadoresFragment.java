@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import co.edu.uniquindio.android.electiva.elvozarron.R;
+import co.edu.uniquindio.android.electiva.elvozarron.util.ConexionSQLite;
 import co.edu.uniquindio.android.electiva.elvozarron.util.EntrenadorAdapter;
 import co.edu.uniquindio.android.electiva.elvozarron.vo.Entrenador;
 
@@ -34,7 +35,7 @@ public class ListaDeEntrenadoresFragment extends Fragment implements EntrenadorA
     private EntrenadorAdapter adaptador;
     private RecyclerView listadoEntrenadores;
     private ArrayList<Entrenador> entrenadores;
-
+  private ConexionSQLite crudsql;
     private OnFragmentInteractionListener mListener;
 
     private OnEntrenadorSeleccionadoListener listener;
@@ -58,6 +59,12 @@ public class ListaDeEntrenadoresFragment extends Fragment implements EntrenadorA
         adaptador = new EntrenadorAdapter(entrenadores,this);
         listadoEntrenadores.setAdapter(adaptador);
         listadoEntrenadores.setLayoutManager( new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+       // crudsql = new ConexionSQLite(getActivity(), 1);
+        //setEntrenadores(crudsql.getInformacionBD());
+        adaptador = new EntrenadorAdapter(entrenadores, ListaDeEntrenadoresFragment.this);
+        listadoEntrenadores.setAdapter(adaptador);
+
+        listadoEntrenadores.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
     }
 
     @Override
@@ -98,6 +105,7 @@ public class ListaDeEntrenadoresFragment extends Fragment implements EntrenadorA
 
     @Override
     public void onClickPosition(int pos) {
+
         listener.onEntrenadorSeleccionado(pos);
     }
 

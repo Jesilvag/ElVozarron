@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import co.edu.uniquindio.android.electiva.elvozarron.R;
 import co.edu.uniquindio.android.electiva.elvozarron.fragments.DetalleEntrenadorFragment;
 import co.edu.uniquindio.android.electiva.elvozarron.fragments.ListaDeEntrenadoresFragment;
+import co.edu.uniquindio.android.electiva.elvozarron.util.ConexionSQLite;
 import co.edu.uniquindio.android.electiva.elvozarron.util.EntrenadorAdapter;
 import co.edu.uniquindio.android.electiva.elvozarron.vo.Entrenador;
 
@@ -26,7 +27,7 @@ public class EntrenadoresActivity extends AppCompatActivity implements ListaDeEn
     private RecyclerView listadoDeEntrenadores;
     private ArrayList<Entrenador> entrenadores;
     private EntrenadorAdapter adaptador ;
-
+    private ConexionSQLite datos;
 
     /**
      * Método que llama el activity entrenadores
@@ -36,17 +37,14 @@ public class EntrenadoresActivity extends AppCompatActivity implements ListaDeEn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrenadores);
-
+        datos=new ConexionSQLite(this,1);
         //se inicializa el arraylist con los elementos de la lista entrenadores
         entrenadores = new ArrayList();
-        entrenadores.add(new Entrenador("historial","jhony rivera","popular",R.drawable.jhony));
-        entrenadores.add(new Entrenador("historial","rihana","popular",R.drawable.rihana));
-        entrenadores.add(new Entrenador("historial","adele","popular",R.drawable.adele));
+
 
         //asigna la lista de entrenadores en la lista del fragment
         ListaDeEntrenadoresFragment listaDeEntrenadoresFragment = (ListaDeEntrenadoresFragment) getSupportFragmentManager().findFragmentById(R.id.fragmento_lista_entrenadores);
-        listaDeEntrenadoresFragment.setEntrenadores(entrenadores);
-
+        listaDeEntrenadoresFragment.setEntrenadores(datos.getInformacionBD());
     }
 
     /**
@@ -80,6 +78,7 @@ public class EntrenadoresActivity extends AppCompatActivity implements ListaDeEn
         boolean esFragmento = getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_entrenador) != null;
 
         if (esFragmento) {
+
             ((DetalleEntrenadorFragment)
                     getSupportFragmentManager().findFragmentById(R.id.fragmento_detalle_entrenador)).mostrarEntrenador(entrenadores.get(position));
         } else {
